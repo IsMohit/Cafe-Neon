@@ -1,4 +1,5 @@
-import './App.css';
+import "./App.css";
+
 import Home from "./pages/home";
 import Menu from "./pages/menu";
 import Blog from "./pages/blog";
@@ -15,10 +16,10 @@ function App() {
     <div classname="App">
       <Router>
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Router>
     </div>

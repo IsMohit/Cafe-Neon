@@ -1,7 +1,13 @@
+import React from "react";
+import "../App.css";
+import Nav from "../components/nav";
 function Blog() {
-    return (
-      <>Welcome To Blog Page !</>
-    );
-  }
-  
-  export default Blog;
+  return (
+    <>
+      <Nav />
+      <p>Welcome To Blog Page !</p>
+    </>
+  );
+}
+
+export default Blog;
