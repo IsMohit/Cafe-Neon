@@ -1,12 +1,84 @@
 /* Comman Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Home page css */
-h1 {
-  text-transform: uppercase;
-  text-align: center;
+
+.hero-wrap {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
-.bg {
-  background-color: orange;
+
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.toggle-icons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.icon-left,
+.icon-right {
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  height: 90px;
+  padding: 20px;
+  width: 100px;
+  transition: color 0.3s;
+}
+
+.icon-left:hover,
+.icon-right:hover {
+  color: #ffc107;
 }
 
 /* about page css */
@@ -27,7 +99,7 @@ h1 {
 /* blog page css */
 p {
   margin-top: 100px;
-  color: white;
+  color: rgb(36, 10, 82);
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
@@ -35,8 +107,7 @@ p {
 
 /* Components css */
 /* Navbar css */
-/* Reset */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -45,51 +116,76 @@ p {
 body {
   font-family: "Poppins", sans-serif;
   background-color: #1e1e1e;
-}
+} */
 
 /* Navbar styling */
-.navbar-nav {
+/* Navbar container */
+.navbar-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  list-style: none;
-  gap: 1.5rem;
-  background-color: #333;
+  justify-content: space-between;
+  background-color: #000000ed;
   padding: 1rem 2rem;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Nav items styling */
-.navbar-nav .nav-item {
-  display: inline-block;
+/* Navbar sections */
+.navbar-left,
+.navbar-right {
+  display: flex;
 }
 
-/* Nav links */
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Logo styling */
+.navbar-logo {
+  width: 80px; /* Adjust as needed */
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar links */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
 .navbar-nav .nav-link {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-/* Different colors for each nav link */
+/* Link colors */
 .navbar-nav .nav-item:nth-child(1) .nav-link {
-  color: #ff4d4d; /* Red */
+  color: #ff4d4d;
 }
 
 .navbar-nav .nav-item:nth-child(2) .nav-link {
-  color: #4d94ff; /* Blue */
+  color: #4d94ff;
 }
 
 .navbar-nav .nav-item:nth-child(3) .nav-link {
-  color: #ffdd4d; /* Yellow */
+  color: #ffd724;
 }
 
 .navbar-nav .nav-item:nth-child(4) .nav-link {
-  color: #4dff88; /* Green */
+  color: #4dff88;
 }
 
 /* Hover effect */

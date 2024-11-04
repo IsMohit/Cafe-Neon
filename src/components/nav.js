@@ -3,26 +3,37 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div>
-      <div className="offcanvas-body">
-        <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
+    <div className="navbar-container">
+      <div className="navbar-left">
+        <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link mx-lg-2" to="/">
+            <Link className="nav-link" to="/">
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link mx-lg-2" to="/menu">
+            <Link className="nav-link" to="/menu">
               Menu
             </Link>
           </li>
+        </ul>
+      </div>
+      <div className="navbar-center">
+        <img
+          src="/images/logo.png"
+          alt="Cafe Neon Logo"
+          className="navbar-logo"
+        />
+      </div>
+      <div className="navbar-right">
+        <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link mx-lg-2" to="/about">
+            <Link className="nav-link" to="/about">
               About
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link mx-lg-2" to="/blog">
+            <Link className="nav-link" to="/blog">
               Blog
             </Link>
           </li>
