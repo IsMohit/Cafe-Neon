@@ -1,3 +1,8 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Comman Css */
 * {
   margin: 0;
@@ -139,6 +144,94 @@
   color: #ffc107;
 }
 
+/* Section and Background */
+.about-section {
+  padding: 60px 0;
+  background-color: #ffffff; /* Light background for the section */
+}
+
+.about-section .container {
+  max-width: auto;
+}
+
+/* Background Image and Overlay */
+.about-section .row.no-gutters {
+  background-size: cover;
+  background-position: right;
+  padding: 45px 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-section .row.no-gutters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 1;
+}
+
+/* Text Content */
+.text-content {
+  position: relative;
+  z-index: 2; /* Above overlay */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* Typography */
+.subheadingA {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  color: #856300; /* Gold accent */
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.mb-3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #11006e;
+  text-align: center;
+}
+
+.about-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000000a4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 10px;
+  }
+  .text-content {
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
 /* about page css */
 .ab {
   text-align: center;
@@ -149,28 +242,158 @@
 }
 
 /* menu page css */
-.mn {
-  background-color: aliceblue;
+.menu {
+  background-color: rgb(7, 65, 116);
   text-align: center;
+  /* padding-top: 100px; */
+  height: 100%;
+  width: 100%;
 }
 
 /* blog page css */
-p {
-  margin-top: 100px;
-  color: rgb(36, 10, 82);
+
+.blogs {
+  padding: 10rem 0;
+  background-color: #f4f6f8;
+}
+.blogs .heading {
+  font-size: 2rem;
+  color: #050505;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+h1 {
   text-align: center;
-  font-weight: 700;
+}
+
+.blogs .highlight {
+  color: #020202;
+}
+
+.containerb {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 10rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-6,
+.col-lg-4 {
+  padding: 0.75rem;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 1 1 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 1 1 30%;
+  }
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+.card-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+.card-body {
+  background: #080808;
+  padding: 1rem;
+  box-shadow: 0px 3px 8px rgba(241, 201, 2, 0.1);
+  border-radius: 0 0 8px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #f8f5f5;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #fdfbfb;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.card .btn-primary {
+  display: inline-block;
+  background-color: #edce09;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 20px;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.card .btn-primary:hover {
+  background-color: #edce09;
+  color: #fff;
+}
+.card-text small {
+  color: #eda109;
+}
+
+@media (max-width: 576px) {
+  .blogs .heading {
+    font-size: 1.8rem;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 140px;
+  }
+  .card-body {
+    padding: 0.75rem;
+  }
+  .card-text {
+    font-size: 0.8rem;
+  }
 }
 
 /* Components css */
 /* Navbar css */
 /* Make the navbar transparent with a slight background blur */
 .navbar-dark {
-  background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent */
+  background-color: rgba(0, 0, 0, 0.749); /* Dark semi-transparent */
   backdrop-filter: blur(10px); /* Adds a blur effect behind the navbar */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801); /* Adds a subtle shadow */
   transition: background-color 0.3s ease;
+  border-radius: 30px;
 }
 
 /* Fix the navbar to the top of the page */
@@ -178,30 +401,30 @@ p {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  /* height: 70px; */
+  height: 70px;
 }
 
 /* Customize the navbar brand text */
 .navbar-brand {
   font-weight: bold;
   text-transform: capitalize;
-  font-size: 1.3rem !important;
+  font-size: 1.4rem !important;
   text-decoration: overline !important;
-  color: #cb000a !important; /* Warm yellow text for brand */
+  color: #cb000a !important;
 }
 
-.navbar-logo {
+/* .navbar-logo {
   width: 55px;
   height: auto;
   margin-right: 20px;
-}
+} */
 
 /* Navbar Links Styling */
 .navbar-dark .navbar-nav .nav-link {
   color: #f0e68c; /* Light yellow color for default state */
-  font-weight: 500;
+  font-family: cursive;
   font-size: 1.3rem;
-  margin: 0 8px;
+  margin: 0 15px;
   position: relative; /* For underline effect */
   transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -241,3 +464,5 @@ p {
 .navbar-dark .navbar-toggler {
   border-color: #ffdf80;
 }
+
+/* Css for Footer */

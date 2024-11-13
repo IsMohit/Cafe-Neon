@@ -6,20 +6,20 @@ function CafeNavbar() {
   return (
     <Navbar
       expand="lg"
-      bg="dark"
+      bg="faint"
       variant="dark"
       className="py-3"
-      style={{ position: "fixed" }}
+      style={{ position: "fixed", marginTop: "20px" }}
     >
       <Container>
         {/* Left Section */}
         <Navbar.Brand href="/">
-          <img
+          {/* <img
             src="/images/logo.png"
             alt="Cafe Neon Logo"
             className="navbar-logo"
-          />
-          Cafe Neon
+          /> */}
+          <sapan> Cafe Neon </sapan>
         </Navbar.Brand>
 
         {/* Toggle for Mobile View */}
