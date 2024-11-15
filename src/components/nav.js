@@ -1,46 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-function Nav() {
+function CafeNavbar() {
   return (
-    <div className="navbar-container">
-      <div className="navbar-left">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link className="nav-link" to="/">
+    <Navbar
+      expand="lg"
+      bg="faint"
+      variant="dark"
+      className="py-3"
+      style={{ position: "fixed", marginTop: "20px" }}
+    >
+      <Container>
+        {/* Left Section */}
+        <Navbar.Brand href="/">
+          {/* <img
+            src="/images/logo.png"
+            alt="Cafe Neon Logo"
+            className="navbar-logo"
+          /> */}
+          <sapan> Cafe Neon </sapan>
+        </Navbar.Brand>
+
+        {/* Toggle for Mobile View */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        {/* Center and Right Section */}
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/" className="px-3">
               Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/menu">
+            </Nav.Link>
+            <Nav.Link as={Link} to="/menu" className="px-3">
               Menu
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-center">
-        <img
-          src="/images/logo.png"
-          alt="Cafe Neon Logo"
-          className="navbar-logo"
-        />
-      </div>
-      <div className="navbar-right">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link className="nav-link" to="/about">
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" className="px-3">
               About
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/blog">
+            </Nav.Link>
+            <Nav.Link as={Link} to="/blog" className="px-3">
               Blog
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </div>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Nav;
+export default CafeNavbar;

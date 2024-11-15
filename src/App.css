@@ -1,3 +1,8 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Comman Css */
 * {
   margin: 0;
@@ -53,9 +58,67 @@
   transform: translateY(-50%);
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+.subheading {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0 10px;
+  position: relative;
+  z-index: 0;
+}
+.subheading-2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e5dc2b;
+  display: inline-block;
+  /* border: 2px solid rgba(216, 1, 1, 0.5); */
+  padding: 5px 10px;
+  position: relative;
+  z-index: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+/* Styles for the h1 element */
+.content h1 {
+  font-size: 4em;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 4px;
+  animation: fadeIn 2s ease-in-out, pulse 1.5s ease-in-out infinite alternate;
+  margin: 30px 0;
+  padding: 20px;
+}
+
+/* Animation for fading in the text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse effect to make the text more dynamic */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 .toggle-icons {
@@ -81,6 +144,94 @@ h1 {
   color: #ffc107;
 }
 
+/* Section and Background */
+.about-section {
+  padding: 60px 0;
+  background-color: #ffffff; /* Light background for the section */
+}
+
+.about-section .container {
+  max-width: auto;
+}
+
+/* Background Image and Overlay */
+.about-section .row.no-gutters {
+  background-size: cover;
+  background-position: right;
+  padding: 45px 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-section .row.no-gutters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.26);
+  z-index: 1;
+}
+
+/* Text Content */
+.text-content {
+  position: relative;
+  z-index: 2; /* Above overlay */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* Typography */
+.subheadingA {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  color: #856300; /* Gold accent */
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.mb-3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #11006e;
+  text-align: center;
+}
+
+.about-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000000a4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 10px;
+  }
+  .text-content {
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
 /* about page css */
 .ab {
   text-align: center;
@@ -91,113 +242,227 @@ h1 {
 }
 
 /* menu page css */
-.mn {
-  background-color: aliceblue;
+.menu {
+  background-color: rgb(7, 65, 116);
   text-align: center;
+  /* padding-top: 100px; */
+  height: 100%;
+  width: 100%;
 }
 
 /* blog page css */
-p {
-  margin-top: 100px;
-  color: rgb(36, 10, 82);
+
+.blogs {
+  padding: 10rem 0;
+  background-color: #f4f6f8;
+}
+.blogs .heading {
+  font-size: 2rem;
+  color: #050505;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+h1 {
   text-align: center;
-  font-weight: 700;
+}
+
+.blogs .highlight {
+  color: #020202;
+}
+
+.containerb {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 10rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-6,
+.col-lg-4 {
+  padding: 0.75rem;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 1 1 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 1 1 30%;
+  }
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+.card-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+.card-body {
+  background: #080808;
+  padding: 1rem;
+  box-shadow: 0px 3px 8px rgba(241, 201, 2, 0.1);
+  border-radius: 0 0 8px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #f8f5f5;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #fdfbfb;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.card .btn-primary {
+  display: inline-block;
+  background-color: #edce09;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 20px;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.card .btn-primary:hover {
+  background-color: #edce09;
+  color: #fff;
+}
+.card-text small {
+  color: #eda109;
+}
+
+@media (max-width: 576px) {
+  .blogs .heading {
+    font-size: 1.8rem;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 140px;
+  }
+  .card-body {
+    padding: 0.75rem;
+  }
+  .card-text {
+    font-size: 0.8rem;
+  }
 }
 
 /* Components css */
 /* Navbar css */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Make the navbar transparent with a slight background blur */
+.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.749); /* Dark semi-transparent */
+  backdrop-filter: blur(10px); /* Adds a blur effect behind the navbar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.801); /* Adds a subtle shadow */
+  transition: background-color 0.3s ease;
+  border-radius: 30px;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #1e1e1e;
+/* Fix the navbar to the top of the page */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  height: 70px;
+}
+
+/* Customize the navbar brand text */
+.navbar-brand {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 1.4rem !important;
+  text-decoration: overline !important;
+  color: #cb000a !important;
+}
+
+/* .navbar-logo {
+  width: 55px;
+  height: auto;
+  margin-right: 20px;
 } */
 
-/* Navbar styling */
-/* Navbar container */
-.navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #000000ed;
-  padding: 1rem 2rem;
-  /* border-radius: 10px; */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+/* Navbar Links Styling */
+.navbar-dark .navbar-nav .nav-link {
+  color: #f0e68c; /* Light yellow color for default state */
+  font-family: cursive;
+  font-size: 1.3rem;
+  margin: 0 15px;
+  position: relative; /* For underline effect */
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Navbar sections */
-.navbar-left,
-.navbar-right {
-  display: flex;
+/* Hover effect for Navbar Links */
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffb347; /* Brighter color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  border-radius: 5px; /* Rounded corners for background */
 }
 
-.navbar-center {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
+/* Animated underline on hover */
+.navbar-dark .navbar-nav .nav-link::after {
+  content: ""; /* Empty content to create the underline */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #ffdf80; /* Match brand color or choose contrasting color */
+  transform: scaleX(0); /* Start with no underline */
+  transform-origin: right; /* Animation direction */
+  transition: transform 0.3s ease; /* Smooth transition */
 }
 
-/* Logo styling */
-.navbar-logo {
-  width: 80px; /* Adjust as needed */
-  transition: transform 0.3s ease;
+.navbar-dark .navbar-nav .nav-link:hover::after {
+  transform: scaleX(1); /* Show underline on hover */
+  transform-origin: left; /* Animation direction */
 }
 
-.navbar-logo:hover {
-  transform: scale(1.1);
+/* Optional - Increase size slightly on hover */
+.navbar-dark .navbar-nav .nav-link:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
 }
 
-/* Navbar links */
-.navbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  list-style: none;
+/* For better mobile responsiveness */
+.navbar-dark .navbar-toggler {
+  border-color: #ffdf80;
 }
 
-.navbar-nav .nav-link {
-  font-size: 1.5rem;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 700;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* Link colors */
-.navbar-nav .nav-item:nth-child(1) .nav-link {
-  color: #ff4d4d;
-}
-
-.navbar-nav .nav-item:nth-child(2) .nav-link {
-  color: #4d94ff;
-}
-
-.navbar-nav .nav-item:nth-child(3) .nav-link {
-  color: #ffd724;
-}
-
-.navbar-nav .nav-item:nth-child(4) .nav-link {
-  color: #4dff88;
-}
-
-/* Hover effect */
-.navbar-nav .nav-link:hover {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Active link effect */
-.navbar-nav .nav-link.active {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.2);
-}
+/* Css for Footer */
