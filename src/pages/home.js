@@ -1,7 +1,7 @@
 // import React from "react";
 import "../App.css";
 import Footer from "../components/footer";
-import Nav from "../components/nav";
+import Newnav from "../components/newnav";
 import React, { useState, useEffect, useCallback } from "react";
 function Home() {
   // State to toggle between images
@@ -17,11 +17,37 @@ function Home() {
     return () => clearInterval(interval); // Clear interval on component unmount
   }, [toggleImage]);
 
+  const testimonials = [
+    {
+      text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      image: "images/person_1.jpg",
+      name: "John Gustavo",
+      position: "Customer",
+    },
+    {
+      text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      image: "images/person_2.jpg",
+      name: "Jane Doe",
+      position: "Customer",
+    },
+    {
+      text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      image: "images/person_3.jpg",
+      name: "Sam Smith",
+      position: "Customer",
+    },
+    {
+      text: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.",
+      image: "images/person_4.jpg",
+      name: "Sam Smith",
+      position: "Customer",
+    },
+  ];
   return (
     <>
       <div className="main">
         <div>
-          <Nav />
+          <Newnav />
         </div>
 
         <section className="hero-wrap">
@@ -108,6 +134,48 @@ function Home() {
             </div>
           </div>
         </section> */}
+        <section
+          className="bg-cover bg-center relative py-16"
+          style={{ backgroundImage: "url('images/bg_5.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="container mx-auto relative z-10">
+            <div className="text-center mb-10">
+              <span className="text-yellow-400 font-bold text-sm uppercase">
+                Testimony
+              </span>
+              <h2 className="text-white text-4xl font-bold mt-2">
+                Happy Customer
+              </h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-full max-w-4xl">
+                <div className="flex gap-8 overflow-x-auto snap-x snap-mandatory">
+                  {testimonials.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex-none w-80  p-6 text-center rounded-lg shadow-lg snap-start"
+                    >
+                      <div
+                        className="w-24 h-24 mx-auto mb-4 bg-cover bg-center rounded-full relative"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      >
+                        <div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center rounded-full">
+                          <i className="text-white text-2xl fas fa-quote-left"></i>
+                        </div>
+                      </div>
+                      <p className="text-yellow-600 italic mb-4">{item.text}</p>
+                      <p className="text-white font-bold">{item.name}</p>
+                      <span className="text-yellow-500 text-sm">
+                        {item.position}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section>
           <Footer />
         </section>

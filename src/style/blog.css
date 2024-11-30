@@ -1,0 +1,132 @@
+.blogs {
+  padding: 10rem 0;
+  background-color: #f4f6f8;
+}
+.blogs .heading {
+  font-size: 2rem;
+  color: #050505;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+h1 {
+  text-align: center;
+}
+
+.blogs .highlight {
+  color: #020202;
+}
+
+.containerb {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding-top: 5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-6,
+.col-lg-4 {
+  padding: 0.75rem;
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 1 1 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 1 1 30%;
+  }
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+.card-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+.card-body {
+  background: #080808;
+  padding: 1rem;
+  box-shadow: 0px 3px 8px rgba(241, 201, 2, 0.1);
+  border-radius: 0 0 8px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #f8f5f5;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #fdfbfb;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.card .btn-primary {
+  display: inline-block;
+  background-color: #edce09;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.card .btn-primary:hover {
+  background-color: #edce09;
+  color: #fff;
+}
+.card-text small {
+  color: #eda109;
+}
+
+@media (max-width: 576px) {
+  .blogs .heading {
+    font-size: 1.8rem;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 140px;
+  }
+  .card-body {
+    padding: 0.75rem;
+  }
+  .card-text {
+    font-size: 0.8rem;
+  }
+}
