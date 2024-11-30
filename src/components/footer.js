@@ -3,18 +3,18 @@ import { FaTwitter, FaFacebook, FaInstagram, FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-r from-blue-100 to-teal-100 text-gray-700 pt-10 pb-16 rounded-t-3xl lg:rounded-t-[3rem] shadow-xl">
+    <footer className="relative bg-black from-blue-100 to-teal-100 text-white-700 pt-10 pb-16 shadow-xl">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Taste.it Section */}
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Cafe Neon</h2>
-            <p className="text-gray-600 mb-4 leading-relaxed">
+          <div className="text-center md:text-center">
+            <h2 className="text-3xl font-bold mb-4 text-red-900">Cafe Neone</h2>
+            <p className="text-yellow-600 mb-4 leading-relaxed">
               Discover a world of exquisite flavors, where every dish tells a
               story. Join us for an unforgettable culinary experience.
             </p>
-            <div className="flex justify-center md:justify-start space-x-4">
+            <div className="flex justify-center md:justify-center space-x-4">
               <a
                 href="#"
                 className="text-gray-500 hover:text-gray-900 transition"
@@ -38,12 +38,12 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div className="text-center">
-            <h2 className="text-xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-xl font-semibold mb-4 text-white">
               Quick Links
             </h2>
             <ul className="space-y-2 text-gray-600">
               <li>
-                <a href="#" className="hover:text-gray-900">
+                <a href="./home" className="hover:text-gray-900">
                   Home
                 </a>
               </li>
@@ -67,10 +67,10 @@ const Footer = () => {
 
           {/* Open Hours Section */}
           <div className="text-center">
-            <h2 className="text-xl font-semibold mb-4 text-gray-900">
+            <h2 className="text-xl font-semibold mb-4 text-white">
               Open Hours
             </h2>
-            <ul className="text-gray-600 space-y-2">
+            <ul className="text-yellow-600 space-y-2">
               <li className="flex justify-between">
                 <span>Monday</span>
                 <span>9:00 AM - 12:00 AM</span>
@@ -104,11 +104,10 @@ const Footer = () => {
 
           {/* Location Section */}
           <div className="text-center">
-            <h2 className="text-xl font-semibold mb-4 text-gray-900">
-              Location
-            </h2>
-            <p className="text-gray-600 mb-4">
-              123 Flavors St., Culinary City, FL 12345
+            <h2 className="text-xl font-semibold mb-4 text-white">Location</h2>
+            <p className="text-yellow-600 mb-4">
+              K city Mall, Gurudwara Rd, Mahdevnagar, Kopargaon, Maharashtra
+              423601
             </p>
             <div className="w-full h-40 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
               <iframe
@@ -128,8 +127,8 @@ const Footer = () => {
       {/* Copyright Bar */}
       <div className="w-full bg-gray-800 py-3 absolute bottom-0 inset-x-0 text-center text-gray-200">
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} Cafe-Neon | All rights reserved |
-          Made with <FaHeart className="inline text-red-500" /> by Cafe-Neon
+          &copy; {new Date().getFullYear()} Cafe-Neone | All rights reserved |
+          Made with <FaHeart className="inline text-red-500" /> by Cafe-Neone
         </p>
       </div>
     </footer>

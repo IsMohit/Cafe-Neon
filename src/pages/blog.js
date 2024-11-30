@@ -1,29 +1,30 @@
 import React from "react";
-import "../App.css";
-import Nav from "../components/nav";
+import { Link } from "react-router-dom";
+import "../style/blog.css";
+import Newnav from "../components/newnav";
 import Footer from "../components/footer";
 
-// import img1 from "./";
-// import img2 from "../assets/img2.png";
-// import img3 from "../assets/img3.png";
+import img1 from "../assets/img1.png";
+import img2 from "../assets/img2.png";
+import img3 from "../assets/img3.png";
 
 const blogData = [
   {
-    img: `${process.env.PUBLIC_URL}/images/img1.jpg`, // Update the path and file name as needed
+    img: img1,
     title: "The Art of Fine Dining",
     date: "21st May, 2021",
     description:
-      "Explore the elegance and finesse of fine dining, where every detail counts and every flavor tells a story.",
+      "Explore the elegance and finesse offine dining, where every detail counts and every flavor tells a story.",
   },
   {
-    img: `${process.env.PUBLIC_URL}/images/img2.jpg`,
+    img: img2,
     title: "Why Farm-to-Table Matters",
     date: "15th June, 2021",
     description:
       "Discover how farm-to-table dining is revolutionizing the food industry with fresh, sustainable ingredients.",
   },
   {
-    img: `${process.env.PUBLIC_URL}/images/img3.jpg`,
+    img: img3,
     title: "The Vegan and Vegetarian Revolution",
     date: "10th July, 2021",
     description:
@@ -36,7 +37,7 @@ const Blog = () => {
     <div>
       <div>
         {" "}
-        <Nav />{" "}
+        <Newnav />{" "}
       </div>
       <section className="blogs py-5" id="blogs">
         <div className="containerb">
@@ -60,9 +61,9 @@ const Blog = () => {
                       </small>
                     </p>
                     <p className="card-text">{item.description}</p>
-                    <a href="#" className="btn btn-primary">
+                    <Link to={`/blog/${index}`} className="btn btn-primary">
                       Read more
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
